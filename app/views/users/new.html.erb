@@ -23,6 +23,11 @@
 -->
 
 <%= form_for(@user, url: '/users') do |f| %>
+  <ul>
+  <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
   Username: <%= f.text_field :username %><br /><br />
   Email : <%= f.text_field :email %><br /><br />
   Password : <%= f.text_field :password %><br /><br />
